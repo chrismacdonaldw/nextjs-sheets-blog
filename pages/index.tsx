@@ -1,11 +1,12 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from "next/link";
+
+import { Layout } from "../components/Layout";
 import fs from "fs";
 import matter from "gray-matter";
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <Layout>
       {posts.map(({ frontmatter: { title, description, date } }) => (
         <article key={title}>
           <header>
@@ -17,7 +18,7 @@ export default function Home({ posts }) {
           </section>
         </article>
       ))}
-    </div>
+    </Layout>
   )
 }
 
