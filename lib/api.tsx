@@ -4,7 +4,7 @@ export async function fetchBlogPosts() {
     try {
         const response = await fetchSheet('blog')
 
-        return rowToBlogPost(response.data.values)
+        return { rows: rowToBlogPost(response.data.values), listed: true }
     } catch (err) {
         return [{ title: 'Failed response', description: `API failed to obtain blog posts, error: ${err}` }]
     }
@@ -14,7 +14,7 @@ export async function fetchBlogPost(row: string) {
     try {
         const response = await fetchRow(row, 'blog')
 
-        return rowToBlogPost(response.data.values)[0]
+        return { rows: rowToBlogPost(response.data.values), listed: false }
     } catch (err) {
         return [{}]
     }
