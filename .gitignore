@@ -35,3 +35,4 @@ yarn-error.log*
 
 # md posts
 content/md/pub-*.md
+chrismac*.json
