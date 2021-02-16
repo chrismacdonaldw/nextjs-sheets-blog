@@ -15,7 +15,7 @@ export const BlogItem = ({ title, description, date, category, id }) => {
             </div>
             <div className="sm:col-span-3 lg:col-span-2">
                 <div className="mb-3">
-                    <Link href={{ pathname: '/blog/', query: { post: id } }}>
+                    <Link href={{ pathname: '/', query: { post: id } }}>
                         <a
                             aria-label="Article"
                             className="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
