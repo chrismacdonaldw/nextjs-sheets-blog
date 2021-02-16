@@ -35,6 +35,13 @@ module.exports = {
   },
   darkMode: "class",
   theme: {
+    textIndent: (theme, { negative }) => ({
+      ...{
+        sm: "2rem",
+        md: "3rem",
+        lg: "4rem",
+      },
+    }),
     extend: {
       colors: {
         "neon-orange": "#f92300",
@@ -119,8 +126,13 @@ module.exports = {
       body: ["Merriweather", ...defaultSerif],
     },
   },
-  variants: {},
-  plugins: [require("@tailwindcss/typography")],
+  variants: {
+    textIndent: ["responsive"],
+  },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("tailwindcss-text-indent")(),
+  ],
   variants: {
     extend: {
       typography: ["dark"],
